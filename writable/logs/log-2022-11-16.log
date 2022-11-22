@@ -1,0 +1,8 @@
+ERROR - 2022-11-16 22:04:02 --> Error connecting to the database: Access denied for user ''@'localhost' (using password: NO)
+ERROR - 2022-11-16 22:04:22 --> Error connecting to the database: Access denied for user ''@'localhost' (using password: NO)
+ERROR - 2022-11-16 22:05:09 --> Error connecting to the database: Access denied for user ''@'localhost' (using password: NO)
+ERROR - 2022-11-16 22:05:22 --> Error connecting to the database: Access denied for user ''@'localhost' (using password: NO)
+ERROR - 2022-11-16 22:06:19 --> Error connecting to the database: Access denied for user ''@'localhost' (using password: NO)
+ERROR - 2022-11-16 22:13:04 --> Error connecting to the database: Access denied for user ''@'localhost' (using password: NO)
+ERROR - 2022-11-16 22:15:27 --> Error connecting to the database: Access denied for user ''@'localhost' (using password: NO)
+ERROR - 2022-11-16 22:17:54 --> Error connecting to the database: Access denied for user '****'@'localhost' (using password: YES)
