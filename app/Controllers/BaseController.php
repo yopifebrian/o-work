@@ -6,6 +6,7 @@ use CodeIgniter\Controller;
 use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
 use Psr\Log\LoggerInterface;
+use CodeIgniter\HTTP\IncomingRequest;
 
 /**
  * Class BaseController
@@ -21,6 +22,12 @@ use Psr\Log\LoggerInterface;
 class BaseController extends Controller
 {
 	/**
+     * Instance of the main Request object.
+     *
+     * @var IncomingRequest
+     */
+    protected $request; 
+	/**
 	 * An array of helpers to be loaded automatically upon
 	 * class instantiation. These helpers will be available
 	 * to all other controllers that extend BaseController.
@@ -35,6 +42,7 @@ class BaseController extends Controller
 	 * @param RequestInterface  $request
 	 * @param ResponseInterface $response
 	 * @param LoggerInterface   $logger
+	 * 
 	 */
 	public function initController(RequestInterface $request, ResponseInterface $response, LoggerInterface $logger)
 	{
