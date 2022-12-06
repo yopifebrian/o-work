@@ -1,19 +1,60 @@
 <?php
 
 namespace App\Controllers;
+use App\Models\UserModel;
 
 class Home extends BaseController
 {
 	
 	public function index()
 	{
-		
+		$data = [];
+		helper(['form']);
+
+
+		if ($this->request->getMethod() == 'post') {
+			//let's do the validation here
+			$rules = [
+				'email' => 'required|min_length[6]|max_length[50]|valid_email',
+				'password' => 'required|min_length[8]|max_length[255]|validateUser[email,password]',
+			];
+
+			$errors = [
+				'password' => [
+					'validateUser' => 'Email or Password don\'t match'
+				]
+			];
+
+			if (! $this->validate($rules, $errors)) {
+				$data['validation'] = $this->validator;
+			}else{
+				$model = new UserModel();
+
+				$user = $model->where('email', $this->request->getVar('email'))
+											->first();
+
+				$this->setUserSession($user);
+				//$session->setFlashdata('success', 'Successful Registration');
+				return redirect()->to('dashboard');
+
+			}
+		}
+		echo view('partials/head-css');
+		echo view('partials/header', $data);
+		echo view('login');
+		echo view('partials/vendor-scripts');
+	}
+	private function setUserSession($user){
 		$data = [
-			'title_meta' => view('partials/title-meta', ['title' => 'Dashboard']),
-			'page_title' => view('partials/page-title', ['title' => 'Dashboard', 'li_1' => 'Minia', 'li_2' => 'Dashboard'])
+			'id' => $user['id'],
+			'firstname' => $user['firstname'],
+			'lastname' => $user['lastname'],
+			'email' => $user['email'],
+			'isLoggedIn' => true,
 		];
-		
-		return view('index', $data);
+
+		session()->set($data);
+		return true;
 	}
 
 	public function show_index_dark()
@@ -21,7 +62,7 @@ class Home extends BaseController
 		
 		$data = [
 			'title_meta' => view('partials/title-meta', ['title' => 'Dashboard']),
-			'page_title' => view('partials/page-title', ['title' => 'Dashboard', 'li_1' => 'Minia', 'li_2' => 'Dashboard'])
+			'page_title' => view('partials/page-title', ['title' => 'Dashboard', 'li_1' => 'O-Work', 'li_2' => 'Dashboard'])
 		];
 		
 		return view('index-dark', $data);
@@ -32,7 +73,7 @@ class Home extends BaseController
 		
 		$data = [
 			'title_meta' => view('partials/title-meta', ['title' => 'Dashboard']),
-			'page_title' => view('partials/page-title', ['title' => 'Dashboard', 'li_1' => 'Minia', 'li_2' => 'Dashboard'])
+			'page_title' => view('partials/page-title', ['title' => 'Dashboard', 'li_1' => 'O-Work', 'li_2' => 'Dashboard'])
 		];
 		
 		return view('index-rtl', $data);
@@ -43,7 +84,7 @@ class Home extends BaseController
 		
 		$data = [
 			'title_meta' => view('partials/title-meta', ['title' => 'Dashboard']),
-			'page_title' => view('partials/page-title', ['title' => 'Dashboard', 'li_1' => 'Minia', 'li_2' => 'Dashboard'])
+			'page_title' => view('partials/page-title', ['title' => 'Dashboard', 'li_1' => 'O-Work', 'li_2' => 'Dashboard'])
 		];
 		
 		return view('layouts-colored-sidebar', $data);
@@ -54,7 +95,7 @@ class Home extends BaseController
 		
 		$data = [
 			'title_meta' => view('partials/title-meta', ['title' => 'Dashboard']),
-			'page_title' => view('partials/page-title', ['title' => 'Dashboard', 'li_1' => 'Minia', 'li_2' => 'Dashboard'])
+			'page_title' => view('partials/page-title', ['title' => 'Dashboard', 'li_1' => 'O-Work', 'li_2' => 'Dashboard'])
 		];
 		
 		return view('layouts-boxed', $data);
@@ -65,7 +106,7 @@ class Home extends BaseController
 		
 		$data = [
 			'title_meta' => view('partials/title-meta', ['title' => 'Dashboard']),
-			'page_title' => view('partials/page-title', ['title' => 'Dashboard', 'li_1' => 'Minia', 'li_2' => 'Dashboard'])
+			'page_title' => view('partials/page-title', ['title' => 'Dashboard', 'li_1' => 'O-Work', 'li_2' => 'Dashboard'])
 		];
 		
 		return view('layouts-compact-sidebar', $data);
@@ -76,7 +117,7 @@ class Home extends BaseController
 		
 		$data = [
 			'title_meta' => view('partials/title-meta', ['title' => 'Dashboard']),
-			'page_title' => view('partials/page-title', ['title' => 'Dashboard', 'li_1' => 'Minia', 'li_2' => 'Dashboard'])
+			'page_title' => view('partials/page-title', ['title' => 'Dashboard', 'li_1' => 'O-Work', 'li_2' => 'Dashboard'])
 		];
 		
 		return view('layouts-dark-sidebar', $data);
@@ -87,7 +128,7 @@ class Home extends BaseController
 		
 		$data = [
 			'title_meta' => view('partials/title-meta', ['title' => 'Dashboard']),
-			'page_title' => view('partials/page-title', ['title' => 'Dashboard', 'li_1' => 'Minia', 'li_2' => 'Dashboard'])
+			'page_title' => view('partials/page-title', ['title' => 'Dashboard', 'li_1' => 'O-Work', 'li_2' => 'Dashboard'])
 		];
 		
 		return view('layouts-icon-sidebar', $data);
@@ -98,7 +139,7 @@ class Home extends BaseController
 		
 		$data = [
 			'title_meta' => view('partials/title-meta', ['title' => 'Dashboard']),
-			'page_title' => view('partials/page-title', ['title' => 'Dashboard', 'li_1' => 'Minia', 'li_2' => 'Dashboard'])
+			'page_title' => view('partials/page-title', ['title' => 'Dashboard', 'li_1' => 'O-Work', 'li_2' => 'Dashboard'])
 		];
 		
 		return view('layouts-scrollable', $data);

@@ -38,10 +38,10 @@ class Users extends BaseController
 
 			}
 		}
-
-		echo view('templates/header', $data);
+		echo view('partials/head-css');
+		echo view('partials/header', $data);
 		echo view('login');
-		echo view('templates/footer');
+		echo view('partials/vendor-scripts');
 	}
 
 	private function setUserSession($user){
@@ -62,7 +62,7 @@ class Users extends BaseController
 		helper(['form']);
 
 		if ($this->request->getMethod() == 'post') {
-			//let's do the validation here
+
 			$rules = [
 				'firstname' => 'required|min_length[3]|max_length[20]',
 				'lastname' => 'required|min_length[3]|max_length[20]',
@@ -90,10 +90,10 @@ class Users extends BaseController
 			}
 		}
 
-
-		echo view('templates/header', $data);
+		echo view('partials/head-css');
+		echo view('partials/header', $data);
 		echo view('register');
-		echo view('templates/footer');
+		echo view('partials/vendor-scripts');
 	}
 
 	public function profile(){

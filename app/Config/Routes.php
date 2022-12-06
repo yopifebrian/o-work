@@ -34,8 +34,8 @@ $routes->setAutoRoute(true);
 // Authentication Routing ---- Removed 
 
 
+
 $routes->get('/', 'Home::index');
-$routes->get('/home', 'Home::index');
 $routes->get('index-dark', 'Home::show_index_dark');
 $routes->get('index-rtl', 'Home::show_index_rtl');
 $routes->get('layouts-boxed', 'Home::show_layouts_boxed');
@@ -84,9 +84,6 @@ $routes->get('auth-confirm-mail', 'Home::show_auth_confirm_mail');
 $routes->get('auth-email-verification', 'Home::show_auth_email_verification');
 $routes->get('auth-two-step-verification', 'Home::show_auth_two_step_verification');
 
-$routes->get('/login', 'LoginController::show_auth_login');
-$routes->get('/logout', 'LoginController::logout');
-$routes->post('/login', 'LoginController::doLogin');
 
 $routes->get('pages-starter', 'Home::show_pages_starter');
 $routes->get('pages-invoice', 'Home::show_pages_invoice');
@@ -159,7 +156,12 @@ $routes->get('maps-google', 'Home::show_maps_google');
 $routes->get('maps-vector', 'Home::show_maps_vector');
 $routes->get('maps-leaflet', 'Home::show_maps_leaflet');
 
-
+// Login and Register
+$routes->get('/', 'Users::index', ['filter' => 'noauth']);
+$routes->get('logout', 'Users::logout');
+$routes->match(['get','post'],'register', 'Users::register', ['filter' => 'noauth']);
+$routes->match(['get','post'],'profile', 'Users::profile',['filter' => 'auth']);
+$routes->get('dashboard', 'Dashboard::index',['filter' => 'auth']);
 
 /**
  * --------------------------------------------------------------------

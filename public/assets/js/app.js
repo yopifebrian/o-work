@@ -1,5 +1,5 @@
 /*
-Template Name: Minia - Bootstrap 5 Admin & Dashboard Template
+Template Name: O-Work - Bootstrap 5 Admin & Dashboard Template
 Author: Themesbrand
 Version: 1.1.0
 Website: https://themesbrand.com/
@@ -12,7 +12,7 @@ File: Main Js File
 
     'use strict';
 
-    var language = localStorage.getItem('minia-language');
+    var language = localStorage.getItem('O-Work-language');
     // Default Language
     var default_lang = 'en';
 
@@ -29,8 +29,8 @@ File: Main Js File
             } else if (lang == 'ru') {
                 document.getElementById("header-lang-img").src = "assets/images/flags/russia.jpg";
             }
-            localStorage.setItem('minia-language', lang);
-            language = localStorage.getItem('minia-language');
+            localStorage.setItem('O-Work-language', lang);
+            language = localStorage.getItem('O-Work-language');
             getLanguage();
         }
     }
