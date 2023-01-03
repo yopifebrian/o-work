@@ -105,7 +105,6 @@ body {
 
 /* Page Section */
 .main-container {
-  margin: 75px 75px 25px 75px;
   display: flex;
   flex-direction: column;
   background-image: url("space.jpg");
@@ -114,9 +113,6 @@ body {
 }
 
 @media only screen and (max-width: 480px) {
-  .main-container {
-    margin: 0px;
-  }
 
   .navbar > div:nth-child(5) {
     display: none;
@@ -238,14 +234,13 @@ tr:hover {
 
 /* Landing Page > Banner */
 .banner {
-  background-color: #8be9fd;
   width: auto;
-  height: 600px;
+  height: 700px;
   display: flex;
   align-items: center;
   justify-content: center;
-
   flex-wrap: wrap-reverse;
+  mask-image: linear-gradient(rgba(0, 0, 0, 0.271), transparent);
 }
 
 .banner-text {
@@ -255,6 +250,7 @@ tr:hover {
   padding: 10px;
   align-items: center;
   justify-content: center;
+  color: aliceblue;
 }
 
 .banner-text1 {
@@ -329,7 +325,7 @@ tr:hover {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 5px solid #ffcc5c;
+  color: aliceblue;
 }
 
 /* Landing Page > Card */
@@ -345,7 +341,10 @@ tr:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 2px solid black;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.308);
+  background-color: rgba(0, 0, 0, 0.275);
+  backdrop-filter: blur(10px);
   width: 250px;
   height: 350px;
   margin: 20px;
