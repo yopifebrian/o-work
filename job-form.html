@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Profile</title>
+    <link rel="stylesheet" href="assets/style.css" />
+    <script
+      src="https://kit.fontawesome.com/1969c0a1ca.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      .input {
+        width: 97%;
+        padding: 6px 6px;
+        font-size: 14px;
+        line-height: 1.42857143;
+        color: rgb(0, 0, 0);
+        background: rgb(255, 255, 255);
+        backdrop-filter: blur(10px);
+        border-radius: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        -webkit-box-shadow: inset 0 1px 1px rgba(113, 11, 145, 0.08);
+        box-shadow: inset 0 1px 1px rgba(47, 1, 99, 0.08);
+        -webkit-transition: border-color ease-in-out 0.15s,
+          -webkit-box-shadow ease-in-out 0.15s;
+        -o-transition: border-color ease-in-out 0.15s,
+          box-shadow ease-in-out 0.15s;
+        transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+        margin-bottom: 15px;
+      }
+      label {
+        font-size: large;
+        color: aliceblue;
+        text-shadow: 1px 1px #38037e;
+      }
+      .button {
+        display: inline-block;
+        padding: 6px 12px;
+        margin-bottom: 5px;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.42857143;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        cursor: pointer;
+        user-select: none;
+        background-image: none;
+        border: 1px solid transparent;
+        border-radius: 4px;
+        background-color: rgb(231, 138, 240);
+        color: rgb(2,5,20);
+        font-weight: 520;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <a class="dropbtn" href="#"
+        ><img
+          style="vertical-align: middle; filter: invert(1)"
+          src="assets/home.png"
+          width="30"
+          height="30"
+        />
+        Home</a
+      >
+      <div class="dropdown">
+        <div class="dropbtn">
+          <img
+            style="vertical-align: middle"
+            src="assets/campaign.png"
+            width="30"
+            height="30"
+          />
+          Jobs
+        </div>
+        <div class="dropdown-content">
+          <a href="#">Search Jobs</a>
+          <a href="#">Applied Jobs</a>
+          <a href="#">Saved Jobs</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <div class="dropbtn">
+          <img
+            style="vertical-align: middle"
+            src="assets/profile.png"
+            width="30"
+            height="30"
+          />
+          <a>Profile</a>
+        </div>
+        <div class="dropdown-content">
+          <a href="#">My Profile</a>
+          <a href="#">Edit Profile</a>
+          <a href="#">Sign Out</a>
+        </div>
+      </div>
+      <div>
+        <img src="assets/logo.png" alt="Nature" class="responsive2" />
+      </div>
+    </nav>
+
+    <!-- Main -->
+    <div class="main-container">
+      <section>
+        <div class="page-title">Create Campaign</div>
+      </section>
+      <div
+        class="profile1"
+        style="margin: 50px; width: unset; height: unset; padding: 50px"
+      >
+        <form action="" method="post">
+          <label for="name">Job Title*</label><br />
+          <input class="input" type="text" placeholder="Enter the Job Title..."/>
+          <label for="loc">Location*</label><br />
+          <input class="input" type="text" id="loc" placeholder="Enter the Location of the working area" />
+          <label for="name">Fee*</label><br />
+          <input class="input" type="number" placeholder="Enter the Estimated Value of Fee in IDR"/>
+          <label for="name">Job Type*</label><br />
+          <select class="input" style="width: 98%">
+            <option value="" selected disabled hidden> Select your Job Type...</option>
+            <option value="full-time">Full-time</option>
+            <option value="part-time">Part-time</option>
+            <option value="freelance">Freelance</option>
+          </select>
+
+          <label for="desc">Job Description*</label><br />
+          <textarea
+          placeholder="Enter your overall job description"
+            class="input"
+            id="desc"
+            cols="5"
+            rows="5"
+            style="resize: none; word-wrap: break-word"
+          ></textarea>
+          <input class="button" type="reset" value="Reset" />
+          <input class="button" type="submit" value="Submit" />
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

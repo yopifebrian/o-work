@@ -1,3 +1,7 @@
+@font-face {
+    font-family: "o-work";
+    src:url("Owork-Regular.otf") format("opentype"); }
+
 a {
     outline: none;
     text-decoration: none;
@@ -41,6 +45,10 @@ a {
     text-align: center;
     color: #fff;
   }
+
+  .navbar > div:nth-child(5) {
+    margin-left: auto;
+  }
   
   .dropbtn {
     color: white;
@@ -58,13 +66,13 @@ a {
   .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f1f1f1;
+    background-color: #282a36;
     width: 100%;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   }
   
   .dropdown-content a {
-    color: black;
+    color: white;
     font-size: 12px;
     padding: 12px 16px;
     text-decoration: none;
@@ -72,7 +80,7 @@ a {
   }
   
   .dropdown-content a:hover {
-    background-color: #ddd;
+    background-color: #6272A4;
   }
   
   .dropdown:hover .dropdown-content {
@@ -80,11 +88,11 @@ a {
   }
   
   .dropdown:hover .dropbtn {
-    background-color: #3e8e41;
+    background-color: #6272A4;
   }
   
   .dropbtn:hover {
-    background-color: #3e8e41;
+    background-color: #6272A4;
   }
   
   /* Page Section */
@@ -97,17 +105,24 @@ a {
   
   @media only screen and (max-width: 480px) {
     .main-container {
-      margin: 20px 20px 25px 20px;
+      margin: 0px;
     }
+
+    .navbar > div:nth-child(5) {
+      display: none;
+    }
+
+    
   }
   
   .page-title {
-    font-size: 1.5em;
+    font-size: 2em;
     display: flex;
     text-align: center;
     padding: 10px;
     align-items: center;
     justify-content: center;
+    font-family: "o-work";
   }
   
   /* Search Section */
@@ -138,6 +153,8 @@ a {
     } */
   .filter-container {
     display: flex;
+    justify-content : center;
+    align-items: center;
   }
   
   .filter {
@@ -149,8 +166,15 @@ a {
     margin: 5px;
   }
   
-  .filter > div {
-    margin: 10px;
+  .sort { 
+  /*    */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  /*  tambahin flex biar ketengah pas lagi screen mengecil  */
+  margin : 10px;
   }
   
   input {
@@ -160,7 +184,10 @@ a {
   
   select {
     font-family: "Fira Mono", serif;
+
   }
+  
+  
   
   /* Table */
   
@@ -184,6 +211,7 @@ a {
     border: none;
     padding: 8px;
     text-align: center;
+    font-size: 0.6em;
   }
   
   #jobtable th {
@@ -192,12 +220,16 @@ a {
   }
   
   tr:hover {
-    background-color: coral;
+    background-color: #6272A4;
   }
   
   .clickable-link {
     cursor: pointer;
   }
+
+  
+
+    
   
   /* Landing Page */
   
@@ -220,14 +252,18 @@ a {
     padding: 10px;
     align-items: center;
     justify-content: center;
+    
+    
   }
   
   .banner-text1 {
     font-size: 3em;
+    font-family: "o-work";
   }
   .banner-text2 {
     font-size: 1.5em;
     margin: 10px;
+    font-family: "o-work";
   }
   
   .banner-button {
@@ -246,6 +282,7 @@ a {
     border-radius: 10%;
     background-color: pink;
     color: black;
+    font-size: 0.9em;
   }
   
   .banner-button > a:hover {
@@ -255,14 +292,34 @@ a {
   .image-container {
     width: 300px;
     height: 300px;
-    flex-shrink: 0;
+    border-radius: 50%;
+    background-color: #282a36;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid white;
   }
   .banner-img {
-    background-image: url(https://images.unsplash.com/photo-1587987501183-33e43fdde781?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzEzODI5ODc&ixlib=rb-4.0.3&q=80);
+    background-image: url(logo.png);
     width: 300px;
     height: 300px;
     background-size: cover;
-    border-radius: 50%;
+    object-fit: contain;
+
+
+    
+  }
+
+  .responsive {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+  }
+
+  .responsive2 {
+    width: 107px;
+    height: 59px;
+
   }
   
   .banner2 {
@@ -295,6 +352,7 @@ a {
   }
   
   .card-title {
+    
     align-items: center;
     width: 250px;
     height: 80px;
@@ -430,33 +488,216 @@ a {
   }
   
   /* Icon Color */
-  .blackiconcolor {
-    color: black;
+    .blackiconcolor {
+      color: black;
+    }
+  
+    .fa-paper-plane:hover{
+      color: #8BE9FD;
+    }
+  
+    .fa-bookmark:hover {
+      color: #8BE9FD;
+    }
+  
+  .fa-pen-to-square:hover {
+    color: #8BE9FD;
   }
-
-  .fa-paper-plane:hover{
-    color: #3e8e41;
+  
+  .fa-x:hover {
+    color: #FF5555;
   }
-
-  .fa-bookmark:hover {
-    color: #3e8e41;
+  
+  .fa-check:hover {
+    color: #50FA7B;
   }
-
+  
+  .fa-eye:hover {
+    color: #F1FA8C
+  }
+  
   .desc {
     background-color: white;
     padding: 20px;
     margin: 10px 30px 10px 30px;
     height: 400px;
     /* tidak menggunakan width agar responsive, coba aja klo ga percaya   */
-    /* eh ternyata salah, kalau ga pake width dan div nya kosong, akan mengecil divnya */
-    /* eh sama aja deng */
-    /* ternyata di display flex profile2, karena display flex jadi mengecil descnya kalau ga full text row */
-    /* Bah, tapi malah jadi height nya ga kecontain JANCOKKKKKKK */
-    /* jadi solusinya buat container untuk profile2, berisi display flex, direction column */
     border-radius: 5%;
     border: 2px solid black;
     font-size: 0.8em;
-    flex-grow:1 ;
-    flex-shrink: 1;
   }
   
+  /* Apply Form */
+  
+  .upload-file {
+    display: flex;
+    justify-content: flex-start;
+    border: 2px solid black;
+    padding: 10px;
+    background-color: white;
+    font-size: 0.8em;
+    margin: 10px;
+    border-radius: 10%;
+  }
+
+.tag-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.tag-container > div {
+  margin:10px;
+}
+
+.job-page{
+  margin: 40px;
+  padding:30px;
+  background: white;
+  border-radius: 5%;
+}
+
+.button-container{
+  display: flex;
+  justify-content: center;
+  margin: 0px 0px 30px 0px;
+}
+
+@media only screen and (max-width: 440px) {
+  .banner{
+    height: 800px;
+    
+  }
+}
+
+/* job card */
+
+
+.job-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  
+/* kalo itemnya hanya satu kenapa ga shrink? */
+}
+
+.job-card {
+  padding: 10px;
+  width: 300px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+  margin: 10px;
+    background-color: white;
+  flex-grow:1;
+  
+}
+
+.job-card1 {
+  padding: 10px;
+  width: 300px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+  margin: 10px;
+    background-color: white;
+  
+}
+
+.job-id-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.job-pic-container {
+  display: flex;
+}
+
+.job-pic {
+  border: 2px solid black;
+  width: 50px;
+  height: 50px;
+  background-size: cover;
+  background-position: top center;
+  border-radius: 50%;
+}
+
+.job-title-container {
+  display: flex;
+  flex-direction:column;
+  margin-left: 10px;
+  justify-content:center;
+}
+
+.job-namae {
+  font-size: 1.2em;
+}
+
+.company-namae {
+  font-size: 0.8em;
+  margin-top: 8px;
+}
+
+.location-namae {
+ font-size: 0.6em; 
+ margin-top: 8px;
+  color: grey;
+}
+
+.job-button-container {
+  width: 250px;
+  height: 50px;
+  display: flex;
+  margin: 10px;
+  justify-content:center;
+}
+
+.job-button {
+  width: 70px;
+  padding:3px;
+  border: 2px solid black;
+  text-align: center;
+  border-radius: 10%;
+  background-color: pink;
+  color: black;
+  font-size: 0.7em;
+  margin:10px;
+}
+
+.dashboard-upper-container{
+  display: flex;
+  margin:10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  
+}
+
+.dashboard-item {
+  display: flex;
+  padding:20px;
+  width:250px;
+  border: 1px solid black;
+  background-color: white;
+  align-items: center;
+  margin: 10px;
+  border-radius: 5px;
+  
+}
+
+.dash-name {
+  width:200px;
+}
+
+.dash-number {
+  width: 20px;
+}
+
+.dashboard-middle-container {
+  display: flex;
+  flex-direction: column;
+    margin: 10px;
+}
