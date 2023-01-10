@@ -728,9 +728,34 @@ tr:hover {
   border-radius: 5px;
 }
 
+.dashboard-button {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  width: 300px;
+  border: 2px solid rgba(255, 255, 255, 0.308);
+  background-color: rgb(124, 27, 133);
+  color: black;
+  align-items: center;
+  margin: 10px;
+  border-radius: 20px;
+  border-color: white;
+}
+
+.dashboard-button:hover {
+  background-color: rgb(2, 5, 20);
+  color: #f8f8f2;
+  border: 2px solid rgb(231, 138, 240);
+}
 .dash-name {
   width: 200px;
   color: aliceblue;
+}
+
+.dash-name1 {
+  width: 200px;
+  color: aliceblue;
+  text-align: center;
 }
 
 .dash-number {
