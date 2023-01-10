@@ -123,7 +123,7 @@ body {
   font-size: 2em;
   display: flex;
   text-align: center;
-  padding: 10px;
+  padding: 30px 30px 0px 30px;
   align-items: center;
   justify-content: center;
   font-family: "o-work";
@@ -381,14 +381,11 @@ tr:hover {
   flex-direction: column;
   border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0.308);
-  /* background-image: url('data:image/svg+xml,%3Csvg width="52" height="26" viewBox="0 0 52 26" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%239C92AC" fill-opacity="0.4"%3E%3Cpath d="M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z" /%3E%3C/g%3E%3C/g%3E%3C/svg%3E'); */
-  /* background-color: #6272a4; */
   background-image: linear-gradient(
     to right,
     rgba(0, 0, 0, 0.13),
     rgba(255, 255, 255, 0.13)
   );
-  backdrop-filter: blur(10px);
 }
 
 .profile1 > div {
@@ -449,8 +446,7 @@ tr:hover {
 .resumes {
   display: flex;
   flex-direction: row;
-  border: 3px ridge black;
-  background-color: white;
+  background-color: black;
   flex-wrap: wrap;
   align-content: center;
   justify-content: center;
@@ -464,6 +460,7 @@ tr:hover {
   border: 1px ridge grey;
   margin: 10px;
   align-items: center;
+  color: aliceblue;
 }
 
 .resume-pic {
@@ -490,9 +487,13 @@ tr:hover {
   margin: 10px;
   display: flex;
   flex-direction: column;
-  border: 2px solid black;
-  background-image: url('data:image/svg+xml,%3Csvg width="52" height="26" viewBox="0 0 52 26" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%239C92AC" fill-opacity="0.4"%3E%3Cpath d="M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z" /%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
-  background-color: #6272a4;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.308);
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.13),
+    rgba(255, 255, 255, 0.13)
+  );
   flex-grow: 1;
   align-items: center;
 }
@@ -586,7 +587,8 @@ tr:hover {
 .job-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
 
   /* kalo itemnya hanya satu kenapa ga shrink? */
@@ -610,6 +612,9 @@ tr:hover {
   backdrop-filter: blur(15px);
   flex-grow: 1;
 }
+.job-card:hover{
+  background-color:rgba(255, 255, 255, 0.298);
+}
 
 .job-card1 {
   padding: 10px;
@@ -626,6 +631,13 @@ tr:hover {
     rgba(255, 255, 255, 0.13)
   );
   backdrop-filter: blur(15px);
+}
+.job-card1:hover{
+  background-image: linear-gradient(
+    to left,
+    rgba(0, 0, 0, 0.13),
+    rgba(255, 255, 255, 0.13)
+  );
 }
 
 .job-id-container {
@@ -644,6 +656,7 @@ tr:hover {
   background-size: cover;
   background-position: top center;
   border-radius: 50%;
+  background-image: url(https://static.dezeen.com/uploads/2021/11/meta-facebook-rebranding-name-news_dezeen_2364_col_sq.jpg);
 }
 
 .job-title-container {
@@ -666,7 +679,7 @@ tr:hover {
 .location-namae {
   font-size: 0.6em;
   margin-top: 8px;
-  color: grey;
+  color: white;
 }
 
 .job-button-container {
@@ -683,11 +696,19 @@ tr:hover {
   border: 2px solid black;
   text-align: center;
   border-radius: 10%;
-  background-color: pink;
+  text-align: center;
+  border-radius: 10%;
+  background-color: rgb(231, 138, 240);
   color: black;
   font-size: 0.7em;
   margin: 10px;
 }
+
+
+.job-button:hover {
+  background-color: rgb(2, 5, 20);
+  color: #f8f8f2;
+  border: 2px solid rgb(231, 138, 240); }
 
 .dashboard-upper-container {
   display: flex;
@@ -702,7 +723,6 @@ tr:hover {
   width: 250px;
   border: 1px solid rgba(255, 255, 255, 0.308);
   background-color: rgba(0, 0, 0, 0.56);
-  backdrop-filter: blur(15px);
   align-items: center;
   margin: 10px;
   border-radius: 5px;
@@ -715,6 +735,7 @@ tr:hover {
 
 .dash-number {
   width: 20px;
+  color: white;
 }
 
 .dashboard-middle-container {
